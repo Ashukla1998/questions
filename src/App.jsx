@@ -63,6 +63,18 @@ export default function App() {
     updated[current] = option;
     setAnswers(updated);
 
+    nextQuestion();
+  }
+
+  function handleSkip() {
+    const updated = [...answers];
+    updated[current] = "Not Answered";
+    setAnswers(updated);
+
+    nextQuestion();
+  }
+
+  function nextQuestion() {
     if (current < questions.length - 1) {
       setCurrent(current + 1);
     } else {
@@ -70,30 +82,9 @@ export default function App() {
     }
   }
 
-  // ✅ Calculate Score
   const score = answers.filter(
     (answer, index) => answer === questions[index].correct
   ).length;
-
-  function downloadPDF() {
-    const doc = new jsPDF();
-
-    doc.setFontSize(18);
-    doc.text("Blood Group Test Report", 20, 20);
-
-    doc.setFontSize(14);
-    doc.text(`Your Score: ${score} / ${questions.length}`, 20, 30);
-
-    doc.setFontSize(12);
-
-    questions.forEach((q, i) => {
-      doc.text(`${i + 1}. ${q.question}`, 20, 45 + i * 15);
-      doc.text(`Your Answer: ${answers[i]}`, 25, 52 + i * 15);
-      doc.text(`Correct Answer: ${q.correct}`, 25, 59 + i * 15);
-    });
-
-    doc.save("blood-test-result.pdf");
-  }
 
   return (
     <div className="app-container">
@@ -124,6 +115,10 @@ export default function App() {
                   </button>
                 ))}
               </div>
+
+              <button onClick={handleSkip} className="skip-btn">
+                Skip Question
+              </button>
             </div>
           ) : (
             <div className="completed">
@@ -133,15 +128,21 @@ export default function App() {
                 Your Score: {score} / {questions.length}
               </h3>
 
-              {score === questions.length && <p>Excellent Performance! 🔥</p>}
-              {score >= 3 && score < questions.length && (
-                <p>Good Job 👍</p>
-              )}
-              {score < 3 && <p>Need More Practice 📚</p>}
+              <hr />
 
-              <button onClick={downloadPDF} className="download-btn">
-                Download Result PDF
-              </button>
+              {questions.map((q, index) => (
+                <div key={index} style={{ marginBottom: "15px" }}>
+                  <p><strong>Q{index + 1}:</strong> {q.question}</p>
+                  <p>
+                    <strong>Your Answer:</strong>{" "}
+                    {answers[index] || "Not Answered"}
+                  </p>
+                  <p>
+                    <strong>Correct Answer:</strong> {q.correct}
+                  </p>
+                  <hr />
+                </div>
+              ))}
             </div>
           )}
         </div>

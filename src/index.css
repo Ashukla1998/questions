@@ -113,3 +113,26 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
+.skip-btn {
+  margin-top: 20px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 2px solid #ff9800;
+  background-color: transparent;
+  color: #ff9800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skip-btn:hover {
+  background-color: #ff9800;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+}
+
+.skip-btn:active {
+  transform: scale(0.95);
+}
