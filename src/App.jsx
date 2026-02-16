@@ -3,53 +3,154 @@ import { jsPDF } from "jspdf";
 
 const questions = [
   {
-    question: "रक्त समूह कितने प्रकार के होते हैं?",
-    options: ["1", "2", "3", "4"],
-    correct: "4",
+    question: "मानव शरीर में कुल कितनी हड्डियाँ होती हैं?",
+    options: ["200", "206", "210", "196"],
+    correct: "206",
   },
   {
-    question: "निम्नलिखित में से किस रक्त समूह को सार्वभौमिक दाता माना जाता है?",
-    options: ["A", "AB", "B", "O"],
-    correct: "O",
+    question: "नवजात शिशु में लगभग कितनी हड्डियाँ होती हैं?",
+    options: ["206", "250", "270", "300"],
+    correct: "300",
   },
   {
-    question: "मानव रक्त के स्थानांतरण की प्रक्रिया को क्या कहा जाता है?",
-    options: ["Transfusion", "Processing", "Transporting", "Transferring"],
-    correct: "Transfusion",
+    question: "मानव शरीर की सबसे लंबी हड्डी कौन-सी है?",
+    options: ["ह्यूमरस", "टिबिया", "फीमर", "रेडियस"],
+    correct: "फीमर",
   },
   {
-    question: "सबसे दुर्लभ रक्त समूह कौन सा है?",
-    options: ["AB negative", "AB positive", "O negative", "O positive"],
-    correct: "AB negative",
+    question: "मानव शरीर की सबसे छोटी हड्डी कौन-सी है?",
+    options: ["स्टेप्स", "फिबुला", "पटेला", "अल्ना"],
+    correct: "स्टेप्स",
   },
   {
-    question: "रक्त समूह की खोज किसने की?",
-    options: ["Thomas Cooley", "Karl Landsteiner", "Camillo Golgi", "Ernst Haecker"],
-    correct: "Karl Landsteiner",
+    question: "खोपड़ी (Skull) में कुल कितनी हड्डियाँ होती हैं?",
+    options: ["20", "22", "24", "26"],
+    correct: "22",
   },
   {
-    question: "मानव रक्त का pH मान है",
-    options: ["6.2", "6.9", "7.4", "8.2"],
+    question: "रीढ़ की हड्डी में कुल कितनी कशेरुकाएँ (Vertebrae) होती हैं?",
+    options: ["30", "31", "32", "33"],
+    correct: "33",
   },
   {
-    question: "निम्नलिखित में से किस ब्लड ग्रुप को 'बॉम्बे ब्लड ग्रुप' के नाम से जाना जाता है?",
-    options: ["AB negative", "HH Group", "A Group", "AB Group"],
-    correct: "HH Group",
+    question: "पसलियों (Ribs) के कितने जोड़े होते हैं?",
+    options: ["10", "11", "12", "13"],
+    correct: "12",
   },
   {
-    question: "एक वयस्क के लिए औसत रक्त की मात्रा लगभग होती है",
-    options: ["25 ltr", "2 ltr", "15 ltr", "5 ltr"],
-    correct: "15 ltr",
+    question: "कंकाल तंत्र का मुख्य कार्य क्या है?",
+    options: ["पाचन", "रक्त संचार", "हार्मोन बनाना", "शरीर को सहारा देना"],
+    correct: "शरीर को सहारा देना",
   },
   {
-    question: "निम्नलिखित में से किसे एरिथ्रोसाइट्स भी कहा जाता है?",
-    options: ["Red Blood cells", "White Blood Cells", "Platelets", "All of above"],
-    correct: "Red Blood cells",
+    question: "रक्त कोशिकाओं का निर्माण कहाँ होता है?",
+    options: ["अस्थि मज्जा (Bone Marrow)", "हृदय", "फेफड़े", "यकृत"],
+    correct: "अस्थि मज्जा (Bone Marrow)",
   },
   {
-    question: "निम्नलिखित में से कौन संक्रमण से लड़ता है और हमें बीमारियों से बचाता है?",
-    options: ["Red Blood cells", "White Blood Cells", "Platelets", "Plasma"],
-    correct: "white Blood Cells",
+    question: "कंधे की हड्डी को क्या कहते हैं?",
+    options: ["क्लेविकल", "स्कैपुला", "ह्यूमरस", "रेडियस"],
+    correct: "स्कैपुला",
+  },
+   {
+    question: "कॉलर बोन (Collar Bone) का वैज्ञानिक नाम क्या है?",
+    options: ["स्कैपुला", "ह्यूमरस", "फिबुला", "क्लेविकल"],
+    correct: "क्लेविकल",
+  },
+  {
+    question: "जांघ की हड्डी का नाम है:",
+    options: ["टिबिया", "फिबुला", "फीमर", "पटेला"],
+    correct: "फीमर",
+  },
+  {
+    question: "घुटने की हड्डी को क्या कहते हैं?",
+    options: ["पटेला", "फिबुला", "रेडियस", "अल्ना"],
+    correct: "फीमर",
+  },
+  {
+    question: "हाथ में कुल कितनी हड्डियाँ होती हैं?",
+    options: ["24", "25", "26", "27"],
+    correct: "27",
+  },
+  {
+    question: "पैर में कुल कितनी हड्डियाँ होती हैं?",
+    options: ["24", "25", "26", "27"],
+    correct: "26",
+  },
+  {
+    question: "रीढ़ की हड्डी का कौन-सा भाग गर्दन में होता है?",
+    options: ["सर्वाइकल", "थोरैसिक", "लम्बर", "सैक्रल"],
+    correct: "सर्वाइकल",
+  },
+  {
+    question: "अस्थि (Bone) का प्रमुख तत्व क्या है?",
+    options: ["आयरन", "कैल्शियम", "सोडियम", "पोटैशियम"],
+    correct: "कैल्शियम",
+  },
+  {
+    question: "खोपड़ी की हड्डियाँ आपस में किस प्रकार जुड़ी होती हैं?",
+    options: ["चल जोड़", "अचल जोड़", "गेंद-सॉकेट जोड़", "कुंडा जोड़"],
+    correct: "अचल जोड़",
+  },
+  {
+    question: "कंधे का जोड़ किस प्रकार का होता है?",
+    options: ["कुंडा जोड़", "स्थिर जोड़", "गेंद-सॉकेट जोड़", "ग्लाइडिंग जोड़"],
+    correct: "गेंद-सॉकेट जोड़",
+  },
+  {
+    question: "कोहनी का जोड़ किस प्रकार का है?",
+    options: ["कुंडा जोड़", "चल जोड़", "ग्लाइडिंग जोड़", "गेंद-सॉकेट जोड़"],
+    correct: "कुंडा जोड़",
+  },
+   {
+    question: "मानव शरीर का अक्षीय कंकाल (Axial Skeleton) किनसे मिलकर बनता है?",
+    options: ["हाथ-पैर", "खोपड़ी, रीढ़, पसलियाँ", "केवल खोपड़ी", "केवल रीढ़"],
+    correct: "खोपड़ी, रीढ़, पसलियाँ",
+  },
+  {
+    question: "अपेंडिकुलर कंकाल (Appendicular Skeleton) में क्या शामिल है?",
+    options: ["हाथ-पैर", "रीढ़", "पसलियाँ", "खोपड़ी"],
+    correct: "हाथ-पैर",
+  },
+  {
+    question: "कुल कितनी सर्वाइकल कशेरुकाएँ होती हैं?",
+    options: ["5", "7", "10", "12"],
+    correct: "7",
+  },
+  {
+    question: "थोरैसिक कशेरुकाएँ कितनी होती हैं?",
+    options: ["10", "11", "12", "13"],
+    correct: "12",
+  },
+  {
+    question: "लम्बर कशेरुकाएँ कितनी होती हैं?",
+    options: ["3", "4", "5", "6"],
+    correct: "5",
+  },
+  {
+    question: "लाल अस्थि मज्जा क्या बनाती है?",
+    options: ["Plasma", "Plates", "WBC", "RBC"],
+    correct: "RBC",
+  },
+  {
+    question: "स्टेप्स किस अंग में होती है?",
+    options: ["कान", "भुजा", "पैर", "छाती"],
+    correct: "कान",
+  },
+  {
+    question: "टिबिया किस अंग में होती है?",
+    options: ["कान", "भुजा", "पैर", "छाती"],
+    correct: "पैर",
+  },
+  {
+    question: "फिबुला किस अंग में होती है?",
+    options: ["कान", "भुजा", "पैर", "छाती"],
+    correct: "पैर",
+  },
+  {
+    question: "ह्यूमरस किस अंग में होती है?",
+    options: ["कान", "भुजा", "पैर", "छाती"],
+    correct: "भुजा",
   },
 ];
 
@@ -90,7 +191,7 @@ export default function App() {
     <div className="app-container">
       <main className="main">
         <div className="hero">
-          <h1>Blood Group Objective Test</h1>
+          <h1>मानव कंकाल तंत्र (Human Skeleton) Test</h1>
         </div>
 
         <div className="card">
